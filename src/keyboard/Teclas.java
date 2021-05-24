@@ -5,10 +5,12 @@ import java.awt.*;
 
 public class Teclas {
 	
-	private JFrame Principal = new JFrame("Teste Teclado Virtual");
+	private JFrame Principal = new JFrame("Teste Teclado Virtual");  // "Titulo" na parte superior do teclado
 	private JLabel label = new JLabel ("Type some text using your keyboard. The keys you press will be highlighted and the text will be displayed.");
-	private JLabel label2 = new JLabel ("Note: Clicking the buttons with your mouse will not perform any action.");
-	private JButton aspas = new JButton("'");
+	private JLabel label2 = new JLabel ("Note: Clicking the buttons with your mouse will not perform any action.");  // Textos fixos
+	private JTextArea caixa = new JTextArea();  // Caixa de texto
+	
+	private JButton aspas = new JButton("'");   // Botoes com nomes e conteúdos
 	private JButton um = new JButton("1");
 	private JButton dois = new JButton("2");
 	private JButton tres = new JButton("3");
@@ -74,17 +76,20 @@ public class Teclas {
 	
 	public Teclas(){
 		
-		Principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Configurações do painel
 		Principal.setSize(new Dimension(820,470));
 		Principal.setResizable(false);
 		Principal.setVisible(true);
 		
 		Container ct = Principal.getContentPane();
-		ct.setLayout(null);
+		ct.setLayout(null);  // Com o layout null é possível posicionar os componentes onde desejar
 		
-		label.setBounds(10,10,600,30);
-		label2.setBounds(10, 25, 400, 30);
-		aspas.setBounds(10, 150, 50, 50);
+		label.setBounds(10,5,600,30);       // tamanho e posição dos textos fixos
+		label2.setBounds(10, 18, 400, 30);
+		caixa.setBounds(10, 60, 750, 80);  // tamanho e posição da caixa de texto
+		caixa.setVisible(true);
+		
+		aspas.setBounds(10, 150, 50, 50);  // tamanhos e posições dos botões
 		um.setBounds(62, 150, 50, 50);
 		dois.setBounds(114, 150, 50, 50);
 		tres.setBounds(166, 150, 50, 50);
@@ -146,8 +151,12 @@ public class Teclas {
 		baixo.setBounds(664, 364, 50, 50);
 		direita.setBounds(716, 364, 50, 50);
 		
+		
+		// adicionando a caixa de texto, textos fixos e botões ao teclado
 		ct.add(label);
 		ct.add(label2);
+		ct.add(caixa);
+		
 		ct.add(aspas);
 		ct.add(um);
 		ct.add(dois);
