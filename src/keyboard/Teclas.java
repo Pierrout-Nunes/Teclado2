@@ -63,14 +63,19 @@ public class Teclas {
 	private JButton virgula = new JButton(",");
 	private JButton ponto = new JButton(".");
 	private JButton ponto_virgula = new JButton(";");
-	private JButton up = new JButton("↑");
+	private JButton cima = new JButton("↑");
+	
+	private JButton space = new JButton("Space");
+	private JButton esquerda = new JButton("←");
+	private JButton baixo = new JButton("↓");
+	private JButton direita = new JButton("→");
 	
 	
 	
 	public Teclas(){
 		
 		Principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Principal.setSize(new Dimension(820,500));
+		Principal.setSize(new Dimension(820,470));
 		Principal.setResizable(false);
 		Principal.setVisible(true);
 		
@@ -94,34 +99,34 @@ public class Teclas {
 		igual.setBounds(634, 150, 50, 50);
 		backspace.setBounds(686, 150, 98, 50);
 		
-		tab.setBounds(18, 204, 80, 50);
-		q.setBounds(100, 204, 50, 50);
-		w.setBounds(152, 204, 50, 50);
-		e.setBounds(204, 204, 50, 50);
-		r.setBounds(256, 204, 50, 50);
-		t.setBounds(308, 204, 50, 50);
-		y.setBounds(360, 204, 50, 50);
-		u.setBounds(412, 204, 50, 50);
-		i.setBounds(464, 204, 50, 50);
-		o.setBounds(516, 204, 50, 50);
-		p.setBounds(568, 204, 50, 50);
-		agudo.setBounds(620, 204, 50, 50);
-		chave_esq.setBounds(672, 204, 50, 50);
+		tab.setBounds(38, 204, 80, 50);
+		q.setBounds(120, 204, 50, 50);
+		w.setBounds(172, 204, 50, 50);
+		e.setBounds(224, 204, 50, 50);
+		r.setBounds(276, 204, 50, 50);
+		t.setBounds(328, 204, 50, 50);
+		y.setBounds(380, 204, 50, 50);
+		u.setBounds(432, 204, 50, 50);
+		i.setBounds(484, 204, 50, 50);
+		o.setBounds(536, 204, 50, 50);
+		p.setBounds(588, 204, 50, 50);
+		agudo.setBounds(640, 204, 50, 50);
+		chave_esq.setBounds(692, 204, 50, 50);
 		
-		caps.setBounds(13, 258, 80, 50);
-		a.setBounds(95, 258, 50, 50);
-		s.setBounds(147, 258, 50, 50);
-		d.setBounds(199, 258, 50, 50);
-		f.setBounds(251, 258, 50, 50);
-		g.setBounds(303, 258, 50, 50);
-		h.setBounds(355, 258, 50, 50);
-		j.setBounds(407, 258, 50, 50);
-		k.setBounds(459, 258, 50, 50);
-		l.setBounds(511, 258, 50, 50);
-		ç.setBounds(563, 258, 50, 50);
-		til.setBounds(615, 258, 50, 50);
-		chave_dir.setBounds(667, 258, 50, 50);
-		enter.setBounds(719, 258, 80, 50);
+		caps.setBounds(10, 258, 80, 50);
+		a.setBounds(92, 258, 50, 50);
+		s.setBounds(144, 258, 50, 50);
+		d.setBounds(196, 258, 50, 50);
+		f.setBounds(248, 258, 50, 50);
+		g.setBounds(300, 258, 50, 50);
+		h.setBounds(352, 258, 50, 50);
+		j.setBounds(404, 258, 50, 50);
+		k.setBounds(456, 258, 50, 50);
+		l.setBounds(508, 258, 50, 50);
+		ç.setBounds(560, 258, 50, 50);
+		til.setBounds(612, 258, 50, 50);
+		chave_dir.setBounds(664, 258, 50, 50);
+		enter.setBounds(716, 258, 70, 50);
 		
 		shift.setBounds(10, 312, 98, 50);
 		z.setBounds(110, 312, 50, 50);
@@ -134,7 +139,12 @@ public class Teclas {
 		virgula.setBounds(474, 312, 50, 50);
 		ponto.setBounds(526, 312, 50, 50);
 		ponto_virgula.setBounds(578, 312, 50, 50);
-		up.setBounds(670, 312, 50, 50);
+		cima.setBounds(664, 312, 50, 50);
+		
+		space.setBounds(200, 364, 300, 50);
+		esquerda.setBounds(612, 364, 50, 50);
+		baixo.setBounds(664, 364, 50, 50);
+		direita.setBounds(716, 364, 50, 50);
 		
 		ct.add(label);
 		ct.add(label2);
@@ -193,9 +203,12 @@ public class Teclas {
 		ct.add(virgula);
 		ct.add(ponto);
 		ct.add(ponto_virgula);
-		ct.add(up);
+		ct.add(cima);
 	
-		
+		ct.add(space);
+		ct.add(esquerda);
+		ct.add(baixo);
+		ct.add(direita);
 	}
 
 }
