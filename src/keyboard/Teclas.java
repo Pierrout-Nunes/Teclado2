@@ -7,14 +7,16 @@ import java.awt.event.KeyEvent;
 
 public class Teclas extends KeyAdapter {
 	
-	private JFrame Principal = new JFrame("Teste Teclado Virtual");  // "Titulo" na parte superior do teclado
-	private JLabel label = new JLabel ("Type some text using your keyboard. The keys you press will be highlighted and the text will be displayed.");
-	private JLabel label2 = new JLabel ("Note: Clicking the buttons with your mouse will not perform any action.");  // Textos fixos
+	private JFrame Principal = new JFrame("~*~* Teclado Virtual *~*~");  // "Titulo" na parte superior do teclado
+	private JLabel label = new JLabel ("Digite textos usando o seu teclado. A teclas que você selecionar serão sinalizadas e o texto será exibido.");
+	private JLabel label2 = new JLabel ("Obs: Não ocorrerá nenhuma ação caso clique nas teclas utilizando o mouse.");  // Textos fixos
+	private JLabel label3 = new JLabel ("Este teclado virtual te ajudará a praticar a digitação sem olhar para o teclado fisico.");
+	private JLabel label4 = new JLabel ("Digite os pangramas na caixa de texto abaixo, após dar um clique na mesma, visualizando ao final um relatório sobre seu desempenho!");
+	private JLabel label5 = new JLabel ("> Lembre-se de clicar a tecla ENTER ao fim de cada frase! <");
+	
+	private JTextArea pangrama1 = new JTextArea("Zebras caolhas de Java querem mandar fax para moça gigante de New York");
 	private JTextArea caixa1 = new JTextArea();  // Caixa de texto
 	private JTextField texto = new JTextField();
-	
-	private JTextArea caixa2 = new JTextArea();
-	private JTextField texto2 = new JTextField();
 	
 	private JButton aspas = new JButton("'");   // Botoes com nomes e conteúdos
 	private JButton um = new JButton("1");
@@ -82,25 +84,26 @@ public class Teclas extends KeyAdapter {
 	public Teclas(){
 		
 		Principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Configurações do painel
-		Principal.setSize(new Dimension(820,700));
+		Principal.setSize(new Dimension(820,670));
 		Principal.setResizable(false);
 		Principal.setVisible(true);
 		
 		Container ct = Principal.getContentPane();
 		ct.setLayout(null);  // Com o layout null é possível posicionar os componentes onde desejar
 		
-		label.setBounds(10,5,600,30);       // tamanho e posição dos textos fixos
-		label2.setBounds(10, 18, 400, 30);
+		label.setBounds(10,2,700,30);       // tamanho e posição dos textos fixos
+		label2.setBounds(10, 16, 500, 30);
+		label3.setBounds(10, 36, 500, 30);
+		label4.setBounds(10, 48, 800, 30);
+		label5.setBounds(10, 70, 500, 30);
+		pangrama1.setBounds(10,110, 500, 20);
 		
-		//LEMBRAR DE ADICIONAR UMA LABEL AQUI
-		caixa1.setBounds(10, 100, 750, 140);  // tamanho e posição da caixa de texto
+		
+		caixa1.setBounds(10, 150, 750, 170);  // tamanho e posição da caixa de texto
 		caixa1.setVisible(true);
-		texto.setBounds(10, 100, 750, 140);
-		
-		//LEMBRAR DE ADICIONAR OUTRA LABEL AQUI TAMBÉMMM
-		caixa2.setBounds(10, 285, 750, 60);
-		texto2.setBounds(10, 285, 750, 60);
-		
+		caixa1.setLineWrap(true);
+	    caixa1.setWrapStyleWord(true);
+
 		aspas.setBounds(10, 350, 50, 50);  // tamanhos e posições dos botões
 		um.setBounds(62, 350, 50, 50);
 		dois.setBounds(114, 350, 50, 50);
@@ -167,11 +170,13 @@ public class Teclas extends KeyAdapter {
 		// adicionando a caixa de texto, textos fixos e botões ao teclado
 		ct.add(label);
 		ct.add(label2);
+		ct.add(label3);
+		ct.add(label4);
+		ct.add(label5);
+		ct.add(pangrama1);
+		
 		ct.add(caixa1);
 		ct.add(texto);
-		
-		ct.add(caixa2);
-		ct.add(texto2);
 		
 		ct.add(aspas);
 		ct.add(um);
@@ -239,174 +244,246 @@ public class Teclas extends KeyAdapter {
 		@Override
 		public void keyPressed(KeyEvent evt) {
 			int keyCode = evt.getKeyCode();
-			if (keyCode == KeyEvent.VK_QUOTE) {
-				caixa1.append(texto.getText());
-				aspas.doClick();
-			}
-				else if (keyCode == KeyEvent.VK_1) {
-					caixa1.append(texto.getText());
-					um.doClick();
-				}
-					else if (keyCode == KeyEvent.VK_2) {
+			
+			switch (keyCode) {
+				case KeyEvent.VK_QUOTE:
+						caixa1.append(texto.getText());
+						aspas.doClick();
+						break;
+				case KeyEvent.VK_1:
+						caixa1.append(texto.getText());
+						um.doClick();
+						break;
+				case KeyEvent.VK_2:
 						caixa1.append(texto.getText());
 						dois.doClick();
-					}
-						else if (keyCode == KeyEvent.VK_3) {
-							caixa1.append(texto.getText());
-							tres.doClick();
-						}
-							else if (keyCode == KeyEvent.VK_4) {
-								caixa1.append(texto.getText());
-								quatro.doClick();
-							}
-								else if (keyCode == KeyEvent.VK_5) {
-									caixa1.append(texto.getText());
-									cinco.doClick();
-								}
-									else if (keyCode == KeyEvent.VK_6) {
-										caixa1.append(texto.getText());
-										seis.doClick();
-									}
-										else if (keyCode == KeyEvent.VK_7) {
-											caixa1.append(texto.getText());
-											sete.doClick();
-										}
-											else if (keyCode == KeyEvent.VK_8) {
-												caixa1.append(texto.getText());
-												oito.doClick();
-											}
-												else if (keyCode == KeyEvent.VK_9) {
-													caixa1.append(texto.getText());
-													nove.doClick();
-												}
-													else if (keyCode == KeyEvent.VK_0) {
-														caixa1.append(texto.getText());
-														zero.doClick();
-													}
-														else if (keyCode == KeyEvent.VK_MINUS) {
-															caixa1.append(texto.getText());
-															menos.doClick();
-														}
-															else if (keyCode == KeyEvent.VK_EQUALS) {
-																caixa1.append(texto.getText());
-																igual.doClick();
-															}
-																else if (keyCode == KeyEvent.VK_BACK_SPACE) {
-																	caixa1.append(texto.getText());
-																	backspace.doClick();
-																}
-																	else if (keyCode == KeyEvent.VK_TAB) {
-																		caixa1.append(texto.getText());
-																		tab.doClick();
-																	}
-																		else if (keyCode == KeyEvent.VK_Q) {
-																			caixa1.append(texto.getText());
-																			q.doClick();
-																		}
-																			else if (keyCode == KeyEvent.VK_W) {
-																				caixa1.append(texto.getText());
-																				w.doClick();
-																			}
-																				else if (keyCode == KeyEvent.VK_E) {
-																					caixa1.append(texto.getText());
-																					e.doClick();
-																				}
-																					else if (keyCode == KeyEvent.VK_R) {
-																						caixa1.append(texto.getText());
-																						r.doClick();
-																					}
-																						else if (keyCode == KeyEvent.VK_T) {
-																							caixa1.append(texto.getText());
-																							t.doClick();
-																						}
-																							else if (keyCode == KeyEvent.VK_Y) {
-																								caixa1.append(texto.getText());
-																								y.doClick();
-																							}
-																								else if (keyCode == KeyEvent.VK_U) {
-																									caixa1.append(texto.getText());
-																									u.doClick();
-																								}
-																									else if (keyCode == KeyEvent.VK_I) {
-																										caixa1.append(texto.getText());
-																										i.doClick();
-																									}
-																										else if (keyCode == KeyEvent.VK_O) {
-																											caixa1.append(texto.getText());
-																											o.doClick();	
-																										}
-																											else if (keyCode == KeyEvent.VK_P) {
-																												caixa1.append(texto.getText());
-																												p.doClick();
-																											}
-																												else if (keyCode == KeyEvent.VK_DEAD_ACUTE) {
-																													caixa1.append(texto.getText());
-																													agudo.doClick();
-																												}
-																													else if (keyCode == KeyEvent.VK_OPEN_BRACKET) {
-																														caixa1.append(texto.getText());
-																														chave_esq.doClick();
-																													}
-			
-																													else if (keyCode == KeyEvent.VK_CAPS_LOCK) {
-																														caixa1.append(texto.getText());
-																														caps.doClick();
-																													}
-																													else if (keyCode == KeyEvent.VK_A) {
-																														caixa1.append(texto.getText());
-																														a.doClick();
-																													}
-																													else if (keyCode == KeyEvent.VK_S) {
-																														caixa1.append(texto.getText());
-																														s.doClick();
-																													}
-																													else if (keyCode == KeyEvent.VK_D) {
-																														caixa1.append(texto.getText());
-																														d.doClick();
-																													}
-																													else if (keyCode == KeyEvent.VK_F) {
-																														caixa1.append(texto.getText());
-																														f.doClick();
-																													}
-																													else if (keyCode == KeyEvent.VK_G) {
-																														caixa1.append(texto.getText());
-																														g.doClick();
-																													}
-																													else if (keyCode == KeyEvent.VK_H) {
-																														caixa1.append(texto.getText());
-																														h.doClick();
-																													}
-																													else if (keyCode == KeyEvent.VK_J) {
-																														caixa1.append(texto.getText());
-																														j.doClick();
-																													}
-																													else if (keyCode == KeyEvent.VK_K) {
-																														caixa1.append(texto.getText());
-																														k.doClick();
-																													}
-																													else if (keyCode == KeyEvent.VK_L) {
-																														caixa1.append(texto.getText());
-																														l.doClick();
-																														
-																													} // PRECISA ACHAR A CHAVE DE Ç
-																												//	else if (keyCode == KeyEvent.VK_DEAD_CEDILLA) {
-																												//		caixa1.append(texto.getText());
-																												//		ç.doClick();
-																												//	}
-																												//	else if (keyCode == KeyEvent.VK_til) {
-																													//	caixa1.append(texto.getText());
-																													//	chave_esq.doClick();
-																												//	}
-																													else if (keyCode == KeyEvent.VK_CLOSE_BRACKET) {
-																														caixa1.append(texto.getText());
-																														chave_dir.doClick();
-																													}
-																													else if (keyCode == KeyEvent.VK_ENTER) {
-																														caixa1.append(texto.getText());
-																														enter.doClick();
-																													}
-		}
+						break;
+				case KeyEvent.VK_3:
+						caixa1.append(texto.getText());
+						tres.doClick();
+						break;
+				case KeyEvent.VK_4:
+						caixa1.append(texto.getText());
+						quatro.doClick();
+						break;
+				case KeyEvent.VK_5:
+						caixa1.append(texto.getText());
+						cinco.doClick();
+						break;
+				case KeyEvent.VK_6:
+						caixa1.append(texto.getText());
+						seis.doClick();
+						break;
+				case KeyEvent.VK_7:
+						caixa1.append(texto.getText());
+						sete.doClick();
+						break;
+				case KeyEvent.VK_8:
+						caixa1.append(texto.getText());
+						oito.doClick();
+						break;
+				case KeyEvent.VK_9:
+						caixa1.append(texto.getText());
+						nove.doClick();
+						break;
+				case KeyEvent.VK_0:
+						caixa1.append(texto.getText());
+						zero.doClick();
+						break;
+				case KeyEvent.VK_MINUS:
+						caixa1.append(texto.getText());
+						menos.doClick();
+						break;
+				case KeyEvent.VK_EQUALS:
+						caixa1.append(texto.getText());
+						igual.doClick();
+						break;
+				case KeyEvent.VK_BACK_SPACE:
+						caixa1.append(texto.getText());
+						backspace.doClick();
+						break;
+				case KeyEvent.VK_TAB:
+						caixa1.append(texto.getText());
+						tab.doClick();
+						break;
+				case KeyEvent.VK_Q:
+						caixa1.append(texto.getText());
+						q.doClick();
+						break;
+				case KeyEvent.VK_W:
+						caixa1.append(texto.getText());
+						w.doClick();
+						break;
+				case KeyEvent.VK_E:
+						caixa1.append(texto.getText());
+						e.doClick();
+						break;
+				case KeyEvent.VK_R:
+						caixa1.append(texto.getText());
+						r.doClick();
+						break;
+				case KeyEvent.VK_T:
+						caixa1.append(texto.getText());
+						t.doClick();
+						break;
+				case KeyEvent.VK_Y:
+						caixa1.append(texto.getText());
+						y.doClick();
+						break;
+				case KeyEvent.VK_U:
+						caixa1.append(texto.getText());
+						u.doClick();
+						break;
+				case KeyEvent.VK_I:
+						caixa1.append(texto.getText());
+						i.doClick();
+						break;
+				case KeyEvent.VK_O:
+						caixa1.append(texto.getText());
+						o.doClick();	
+						break;
+				case KeyEvent.VK_P:
+						caixa1.append(texto.getText());
+						p.doClick();
+						break;
+				case KeyEvent.VK_DEAD_ACUTE:
+						caixa1.append(texto.getText());
+						agudo.doClick();
+						break;
+				case KeyEvent.VK_OPEN_BRACKET:
+						caixa1.append(texto.getText());
+						chave_esq.doClick();
+						break;
+				case KeyEvent.VK_CAPS_LOCK:
+						caixa1.append(texto.getText());
+						caps.doClick();
+						break;
+				case KeyEvent.VK_A:
+						caixa1.append(texto.getText());
+						a.doClick();
+						break;
+				case KeyEvent.VK_S:
+						caixa1.append(texto.getText());
+						s.doClick();
+						break;
+				case KeyEvent.VK_D:
+						caixa1.append(texto.getText());
+						d.doClick();
+						break;
+				case KeyEvent.VK_F:
+						caixa1.append(texto.getText());
+						f.doClick();
+						break;
+				case KeyEvent.VK_G:
+						caixa1.append(texto.getText());
+						g.doClick();
+						break;
+				case KeyEvent.VK_H:
+						caixa1.append(texto.getText());
+						h.doClick();
+						break;
+				case KeyEvent.VK_J:
+						caixa1.append(texto.getText());
+						j.doClick();
+						break;
+				case KeyEvent.VK_K:
+						caixa1.append(texto.getText());
+						k.doClick();
+						break;
+				case KeyEvent.VK_L:
+						caixa1.append(texto.getText());
+						l.doClick();
+						break;
 		
+			//case KeyEvent.VK_DEAD_CEDILLA:
+			//			caixa1.append(texto.getText());
+			//			ç.doClick();
+			//		break;
+						
+				case KeyEvent.VK_DEAD_TILDE:
+						caixa1.append(texto.getText());
+						til.doClick();
+						break;
+				case KeyEvent.VK_CLOSE_BRACKET:
+						caixa1.append(texto.getText());
+						chave_dir.doClick();
+						break;
+				case KeyEvent.VK_ENTER:
+						caixa1.append(texto.getText());
+						enter.doClick();
+						break;
+				case KeyEvent.VK_SHIFT:
+						caixa1.append(texto.getText());
+						shift.doClick();
+						break;
+				case KeyEvent.VK_Z:
+						caixa1.append(texto.getText());
+						z.doClick();
+						break;
+				case KeyEvent.VK_X:
+						caixa1.append(texto.getText());
+						x.doClick();
+						break;
+				case KeyEvent.VK_C:
+						caixa1.append(texto.getText());
+						c.doClick();
+						break;
+				case KeyEvent.VK_V:
+						caixa1.append(texto.getText());
+						v.doClick();
+						break;
+				case KeyEvent.VK_B:
+						caixa1.append(texto.getText());
+						b.doClick();
+						break;
+				case KeyEvent.VK_N:
+						caixa1.append(texto.getText());
+						n.doClick();
+						break;
+				case KeyEvent.VK_M:
+						caixa1.append(texto.getText());
+						m.doClick();
+						break;
+				case KeyEvent.VK_COMMA:
+						caixa1.append(texto.getText());
+						virgula.doClick();
+						break;
+				case KeyEvent.VK_PERIOD:
+						caixa1.append(texto.getText());
+						ponto.doClick();
+						break;
+				case KeyEvent.VK_SEMICOLON:
+						caixa1.append(texto.getText());
+						ponto_virgula.doClick();
+						break;
+				case KeyEvent.VK_SPACE:
+						caixa1.append(texto.getText());
+						space.doClick();
+						break;
+				case KeyEvent.VK_UP:
+					caixa1.append(texto.getText());
+					cima.doClick();
+					break;
+				case KeyEvent.VK_RIGHT:
+					caixa1.append(texto.getText());
+					direita.doClick();
+					break;
+				case KeyEvent.VK_LEFT:
+					caixa1.append(texto.getText());
+					esquerda.doClick();
+					break;
+				case KeyEvent.VK_DOWN:
+					caixa1.append(texto.getText());
+					baixo.doClick();
+					break;
+				default:
+					caixa1.append(texto.getText());
+					ç.doClick();
+					break;
+			}
+						
+		}
+	
 	});
 		
 	}
