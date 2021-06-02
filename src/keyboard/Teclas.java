@@ -14,9 +14,17 @@ public class Teclas extends KeyAdapter {
 	private JLabel label4 = new JLabel ("Digite os pangramas na caixa de texto abaixo, após dar um clique na mesma, visualizando ao final um relatório sobre seu desempenho!");
 	private JLabel label5 = new JLabel ("> Lembre-se de clicar a tecla ENTER ao fim de cada frase! <");
 	
-	private JTextArea pangrama1 = new JTextArea("Zebras caolhas de Java querem mandar fax para moça gigante de New York");
+	//private JTextArea pangrama1 = new JTextArea("Zebras caolhas de Java querem mandar fax para moça gigante de New York");
 	private JTextArea caixa1 = new JTextArea();  // Caixa de texto
 	private JTextField texto = new JTextField();
+	
+	String pangrama = "abc";
+	int tamanho = pangrama.length();
+	int atual = 0;
+	int erro_atual = 0;
+	int acerto_atual = 0;
+	
+	private JTextField pang = new JTextField(pangrama);
 	
 	private JButton aspas = new JButton("'");   // Botoes com nomes e conteúdos
 	private JButton um = new JButton("1");
@@ -96,13 +104,16 @@ public class Teclas extends KeyAdapter {
 		label3.setBounds(10, 36, 500, 30);
 		label4.setBounds(10, 48, 800, 30);
 		label5.setBounds(10, 70, 500, 30);
-		pangrama1.setBounds(10,110, 500, 20);
+	//	pangrama1.setBounds(10,110, 500, 20);
+		
+		pang.setBounds(10, 110, 500, 20);
 		
 		
 		caixa1.setBounds(10, 150, 750, 170);  // tamanho e posição da caixa de texto
 		caixa1.setVisible(true);
 		caixa1.setLineWrap(true);
 	    caixa1.setWrapStyleWord(true);
+	    texto.setBounds(10,150,750,170);
 
 		aspas.setBounds(10, 350, 50, 50);  // tamanhos e posições dos botões
 		um.setBounds(62, 350, 50, 50);
@@ -173,7 +184,9 @@ public class Teclas extends KeyAdapter {
 		ct.add(label3);
 		ct.add(label4);
 		ct.add(label5);
-		ct.add(pangrama1);
+	//	ct.add(pangrama1);
+		
+		ct.add(pang);
 		
 		ct.add(caixa1);
 		ct.add(texto);
@@ -247,15 +260,15 @@ public class Teclas extends KeyAdapter {
 			
 			switch (keyCode) {
 				case KeyEvent.VK_QUOTE:
-						caixa1.append(texto.getText());
+					//	caixa1.append(texto.getText());
 						aspas.doClick();
 						break;
 				case KeyEvent.VK_1:
-						caixa1.append(texto.getText());
+					//	caixa1.append(texto.getText());
 						um.doClick();
 						break;
 				case KeyEvent.VK_2:
-						caixa1.append(texto.getText());
+					//	caixa1.append(texto.getText());
 						dois.doClick();
 						break;
 				case KeyEvent.VK_3:
@@ -483,6 +496,22 @@ public class Teclas extends KeyAdapter {
 			}
 						
 		}
+		
+	@Override
+	public void keyReleased (KeyEvent evt) {
+		int keyCode = evt.getKeyCode();
+		
+		if (caixa1.getText().charAt(atual) == texto.getText().charAt(atual)) {
+			System.out.println("Acertou");
+			acerto_atual++;
+			System.out.println("Você acertou "+ acerto_atual);
+		}
+		else if (caixa1.getText().charAt(atual)!= texto.getText().charAt(atual)){
+            erro_atual ++;
+            System.out.println("errou "+ erro_atual);
+		}
+	atual++;
+	}
 	
 	});
 		
