@@ -20,6 +20,12 @@ public class Teclas extends KeyAdapter {
 	
 	String pangrama = "abc";
 	int tamanho = pangrama.length();
+	
+	String pangrama2 = "abcde";
+	int tamanho2 = pangrama2.length();
+	
+	int contador = 0;
+	
 	int atual = 0;
 	int erro_atual = 0;
 	int acerto_atual = 0;
@@ -260,15 +266,15 @@ public class Teclas extends KeyAdapter {
 			
 			switch (keyCode) {
 				case KeyEvent.VK_QUOTE:
-					//	caixa1.append(texto.getText());
+						caixa1.append(texto.getText());
 						aspas.doClick();
 						break;
 				case KeyEvent.VK_1:
-					//	caixa1.append(texto.getText());
+						caixa1.append(texto.getText());
 						um.doClick();
 						break;
 				case KeyEvent.VK_2:
-					//	caixa1.append(texto.getText());
+						caixa1.append(texto.getText());
 						dois.doClick();
 						break;
 				case KeyEvent.VK_3:
@@ -314,6 +320,7 @@ public class Teclas extends KeyAdapter {
 				case KeyEvent.VK_BACK_SPACE:
 						caixa1.append(texto.getText());
 						backspace.doClick();
+						atual--;
 						break;
 				case KeyEvent.VK_TAB:
 						caixa1.append(texto.getText());
@@ -407,12 +414,7 @@ public class Teclas extends KeyAdapter {
 						caixa1.append(texto.getText());
 						l.doClick();
 						break;
-		
-			//case KeyEvent.VK_DEAD_CEDILLA:
-			//			caixa1.append(texto.getText());
-			//			ç.doClick();
-			//		break;
-						
+				
 				case KeyEvent.VK_DEAD_TILDE:
 						caixa1.append(texto.getText());
 						til.doClick();
@@ -501,17 +503,76 @@ public class Teclas extends KeyAdapter {
 	public void keyReleased (KeyEvent evt) {
 		int keyCode = evt.getKeyCode();
 		
-		if (caixa1.getText().charAt(atual) == texto.getText().charAt(atual)) {
-			System.out.println("Acertou");
-			acerto_atual++;
-			System.out.println("Você acertou "+ acerto_atual);
+		try {
+			contador = 0;
+			if ((caixa1.getText().length() <= tamanho) (contador = 0)) { 
+				
+				if(caixa1.getText().charAt(atual) == pang.getText().charAt(atual)){
+					atual++;
+					System.out.println("acertou");
+					acerto_atual++;
+					System.out.println("você acertou "+ acerto_atual);
+				}
+				else
+					if(caixa1.getText().charAt(atual) != pang.getText().charAt(atual)) {
+						erro_atual++;
+						System.out.println("errou "+ erro_atual);
+					}
+				
+			}
+			else
+			if(caixa1.getText().length() > tamanho) {
+				pang.setText("appp");
+				caixa1.setText(null);
+				atual = 0;
+				erro_atual = 0;
+				acerto_atual = 0;
+				System.out.println(" "+pang.getText());
+			}
+				else {
+					pang.setText("abcde");
+					caixa1.setText(null);
+					atual = 0;
+					erro_atual = 0;
+					acerto_atual = 0;
+					System.out.println(" "+pang.getText());
+				}
+				}
+	//			else {
+		//			tamanho = 1;
+			//		if (caixa1.getText().length() <= tamanho) {
+		//			pang.setText("sr");
+				//	caixa1.setText(null);
+			//		atual = 0;
+		//			erro_atual = 0;
+		//			acerto_atual = 0;
+		//			System.out.println(" "+pang.getText());
+		//			}
+		//			}
+				
+			
+			
+		
+		catch (Exception um)
+		{		
+			if(evt.getKeyCode()==8) {
+				atual--;
+				System.out.println("letra deletada");
+			}
+			else 
+				if (caixa1.getText().length() > tamanho) {
+			System.out.println("Estourou o tamanho da string");
+			System.out.println(" exceção "+atual);
+				}
 		}
-		else if (caixa1.getText().charAt(atual)!= texto.getText().charAt(atual)){
-            erro_atual ++;
-            System.out.println("errou "+ erro_atual);
+		
+		if(pang.getText().equals(caixa1.getText())) {
+			System.out.println("tudo certo");
 		}
-	atual++;
+		
 	}
+		
+		
 	
 	});
 		
