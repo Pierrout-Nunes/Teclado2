@@ -279,6 +279,67 @@ public class Teclas extends KeyAdapter {
 		
 		// ouvir eventos do teclado
 		final Color corOriginalaspas = aspas.getBackground();
+		final Color corOriginalUM = um.getBackground();
+        final Color corOriginalDOIS = dois.getBackground();
+        final Color corOriginalTRES = tres.getBackground();
+        final Color corOriginalQUATRO = quatro.getBackground();
+        final Color corOriginalCINCO = cinco.getBackground();
+        final Color corOriginalSEIS = seis.getBackground();
+        final Color corOriginalSETE = sete.getBackground();
+        final Color corOriginalOITO = oito.getBackground();
+        final Color corOriginalNOVE = nove.getBackground();
+        final Color corOriginalZERO = zero.getBackground();
+        final Color corOriginalMENOS = menos.getBackground();
+        final Color corOriginalIGUAL = igual.getBackground();
+        final Color corOriginalBACKSPACE = backspace.getBackground();
+       
+        final Color corOriginalTAB = tab.getBackground();
+        final Color corOriginalQ = q.getBackground();
+        final Color corOriginalW = w.getBackground();
+        final Color corOriginalE = e.getBackground();
+        final Color corOriginalR = r.getBackground();
+        final Color corOriginalT = t.getBackground();
+        final Color corOriginalY = y.getBackground();
+        final Color corOriginalU = u.getBackground();
+        final Color corOriginalI = i.getBackground();
+        final Color corOriginalO = o.getBackground();
+        final Color corOriginalP = p.getBackground();
+        final Color corOriginalAGUDO = agudo.getBackground();
+        final Color corOriginalCHAVE_ESQ = chave_esq.getBackground();
+        final Color corOriginalCAPS = caps.getBackground();
+        final Color corOriginalA = a.getBackground();
+        final Color corOriginalS = s.getBackground();
+        final Color corOriginalD = d.getBackground();
+        final Color corOriginalF = f.getBackground();
+        final Color corOriginalG = g.getBackground();
+        final Color corOriginalH = h.getBackground();
+        final Color corOriginalJ = j.getBackground();
+        final Color corOriginalK = k.getBackground();
+        final Color corOriginalL = l.getBackground();
+        final Color corOriginalÇ = ç.getBackground();
+        final Color corOriginalTIL = til.getBackground();
+        final Color corOriginalCHAVE_DIR = chave_dir.getBackground();
+        final Color corOriginalENTER = enter.getBackground();
+       
+        final Color corOriginalSHIFT = shift.getBackground();
+        final Color corOriginalZ = z.getBackground();
+        final Color corOriginalX = x.getBackground();
+        final Color corOriginalC = c.getBackground();
+        final Color corOriginalV = v.getBackground();
+        final Color corOriginalB = b.getBackground();
+        final Color corOriginalN = n.getBackground();
+        final Color corOriginalM = m.getBackground();
+        final Color corOriginalVIRGULA = virgula.getBackground();
+        final Color corOriginalPONTO = ponto.getBackground();
+        final Color corOriginalPONTO_VIRGULA = ponto_virgula.getBackground();
+        final Color corOriginalCIMA = cima.getBackground();
+       
+        final Color corOriginalSPACE = space.getBackground();
+        final Color corOriginalESQUERDA = esquerda.getBackground();
+        final Color corOriginalBAIXO = baixo.getBackground();
+        final Color corOriginalDIREITA = direita.getBackground();
+        
+        
 		caixa1.addKeyListener(new KeyAdapter() {
 		@Override
 		
@@ -296,227 +357,282 @@ public class Teclas extends KeyAdapter {
 				case KeyEvent.VK_1:
 						caixa1.append(texto.getText());
 						um.doClick();
+						um.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_2:
 						caixa1.append(texto.getText());
 						dois.doClick();
+						dois.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_3:
 						caixa1.append(texto.getText());
 						tres.doClick();
+						tres.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_4:
 						caixa1.append(texto.getText());
 						quatro.doClick();
+						quatro.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_5:
 						caixa1.append(texto.getText());
 						cinco.doClick();
+						cinco.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_6:
 						caixa1.append(texto.getText());
 						seis.doClick();
+						seis.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_7:
 						caixa1.append(texto.getText());
 						sete.doClick();
+						sete.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_8:
 						caixa1.append(texto.getText());
 						oito.doClick();
+						oito.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_9:
 						caixa1.append(texto.getText());
 						nove.doClick();
+						nove.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_0:
 						caixa1.append(texto.getText());
 						zero.doClick();
+						zero.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_MINUS:
 						caixa1.append(texto.getText());
 						menos.doClick();
+						menos.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_EQUALS:
 						caixa1.append(texto.getText());
 						igual.doClick();
+						igual.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_BACK_SPACE:
 						caixa1.append(texto.getText());
 						backspace.doClick();
-						atual--;
+						backspace.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_TAB:
 						caixa1.append(texto.getText());
 						tab.doClick();
+						tab.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_Q:
 						caixa1.append(texto.getText());
 						q.doClick();
+						q.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_W:
 						caixa1.append(texto.getText());
 						w.doClick();
+						w.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_E:
 						caixa1.append(texto.getText());
 						e.doClick();
+						e.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_R:
 						caixa1.append(texto.getText());
 						r.doClick();
+						r.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_T:
 						caixa1.append(texto.getText());
 						t.doClick();
+						t.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_Y:
 						caixa1.append(texto.getText());
 						y.doClick();
+						y.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_U:
 						caixa1.append(texto.getText());
 						u.doClick();
+						u.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_I:
 						caixa1.append(texto.getText());
 						i.doClick();
+						i.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_O:
 						caixa1.append(texto.getText());
-						o.doClick();	
+						o.doClick();
+						o.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_P:
 						caixa1.append(texto.getText());
 						p.doClick();
+						p.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_DEAD_ACUTE:
 						caixa1.append(texto.getText());
 						agudo.doClick();
+						agudo.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_OPEN_BRACKET:
 						caixa1.append(texto.getText());
 						chave_esq.doClick();
+						chave_esq.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_CAPS_LOCK:
 						caixa1.append(texto.getText());
 						caps.doClick();
+						caps.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_A:
 						caixa1.append(texto.getText());
 						a.doClick();
+						a.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_S:
 						caixa1.append(texto.getText());
 						s.doClick();
+						s.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_D:
 						caixa1.append(texto.getText());
 						d.doClick();
+						d.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_F:
 						caixa1.append(texto.getText());
 						f.doClick();
+						f.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_G:
 						caixa1.append(texto.getText());
 						g.doClick();
+						g.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_H:
 						caixa1.append(texto.getText());
 						h.doClick();
+						h.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_J:
 						caixa1.append(texto.getText());
 						j.doClick();
+						j.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_K:
 						caixa1.append(texto.getText());
 						k.doClick();
+						k.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_L:
 						caixa1.append(texto.getText());
 						l.doClick();
+						l.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_DEAD_TILDE:
 						caixa1.append(texto.getText());
 						til.doClick();
+						til.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_CLOSE_BRACKET:
 						caixa1.append(texto.getText());
 						chave_dir.doClick();
+						chave_dir.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_ENTER:
 						caixa1.append(texto.getText());
 						enter.doClick();
+						enter.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_SHIFT:
 						caixa1.append(texto.getText());
 						shift.doClick();
+						shift.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_Z:
 						caixa1.append(texto.getText());
 						z.doClick();
+						z.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_X:
 						caixa1.append(texto.getText());
 						x.doClick();
+						x.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_C:
 						caixa1.append(texto.getText());
 						c.doClick();
+						c.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_V:
 						caixa1.append(texto.getText());
 						v.doClick();
+						v.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_B:
 						caixa1.append(texto.getText());
 						b.doClick();
+						b.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_N:
 						caixa1.append(texto.getText());
 						n.doClick();
+						n.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_M:
 						caixa1.append(texto.getText());
 						m.doClick();
+						m.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_COMMA:
 						caixa1.append(texto.getText());
 						virgula.doClick();
+						virgula.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_PERIOD:
 						caixa1.append(texto.getText());
 						ponto.doClick();
+						ponto.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_SEMICOLON:
 						caixa1.append(texto.getText());
 						ponto_virgula.doClick();
+						ponto_virgula.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_SPACE:
 						caixa1.append(texto.getText());
 						space.doClick();
+						space.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_UP:
 						caixa1.append(texto.getText());
 						cima.doClick();
+						cima.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_RIGHT:
 						caixa1.append(texto.getText());
 						direita.doClick();
+						direita.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_LEFT:
 						caixa1.append(texto.getText());
 						esquerda.doClick();
+						esquerda.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_DOWN:
 						caixa1.append(texto.getText());
 						baixo.doClick();
+						baixo.setBackground(Color.red);
 						break;
 				default:
 						caixa1.append(texto.getText());
 						ç.doClick();
+						ç.setBackground(Color.red);
 						break;
 			}
 						
@@ -529,10 +645,181 @@ public class Teclas extends KeyAdapter {
 	public void keyReleased (KeyEvent evt) {
 		int keyCode = evt.getKeyCode();
 		
-		if (keyCode == KeyEvent.VK_QUOTE) {
-			aspas.setBackground(corOriginalaspas);
-			}
-		
+		switch (keyCode) {
+			case KeyEvent.VK_QUOTE:
+				aspas.setBackground(corOriginalaspas);
+				break;
+			case KeyEvent.VK_1:
+				um.setBackground(corOriginalUM);
+				break;
+			case KeyEvent.VK_2:
+				dois.setBackground(corOriginalDOIS);
+				break;
+			case KeyEvent.VK_3:
+				tres.setBackground(corOriginalTRES);
+				break;
+			case KeyEvent.VK_4:
+				quatro.setBackground(corOriginalQUATRO);
+				break;
+			case KeyEvent.VK_5:
+				cinco.setBackground(corOriginalCINCO);
+				break;
+			case KeyEvent.VK_6:
+				seis.setBackground(corOriginalSEIS);
+				break;
+			case KeyEvent.VK_7:
+				sete.setBackground(corOriginalSETE);
+				break;
+			case KeyEvent.VK_8:
+				oito.setBackground(corOriginalOITO);
+				break;
+			case KeyEvent.VK_9:
+				nove.setBackground(corOriginalNOVE);
+				break;
+			case KeyEvent.VK_0:
+				zero.setBackground(corOriginalZERO);
+				break;
+			case KeyEvent.VK_MINUS:
+				menos.setBackground(corOriginalMENOS);
+				break;
+			case KeyEvent.VK_EQUALS:
+				igual.setBackground(corOriginalIGUAL);
+				break;
+			case KeyEvent.VK_BACK_SPACE:
+				backspace.setBackground(corOriginalBACKSPACE);
+				break;
+			case KeyEvent.VK_TAB:
+				tab.setBackground(corOriginalTAB);
+				break;
+			case KeyEvent.VK_Q:
+				q.setBackground(corOriginalQ);
+				break;
+			case KeyEvent.VK_W:
+				w.setBackground(corOriginalW);
+				break;
+			case KeyEvent.VK_E:
+				e.setBackground(corOriginalE);
+				break;
+			case KeyEvent.VK_R:
+				r.setBackground(corOriginalR);
+				break;
+			case KeyEvent.VK_T:
+				t.setBackground(corOriginalT);
+				break;
+			case KeyEvent.VK_Y:
+				y.setBackground(corOriginalY);
+				break;
+			case KeyEvent.VK_U:
+				u.setBackground(corOriginalU);	
+				break;
+			case KeyEvent.VK_I:
+				i.setBackground(corOriginalI);
+				break;
+			case KeyEvent.VK_O:
+				o.setBackground(corOriginalO);
+				break;
+			case KeyEvent.VK_P:
+				p.setBackground(corOriginalP);
+				break;
+			case KeyEvent.VK_DEAD_ACUTE:
+				agudo.setBackground(corOriginalAGUDO);				
+				break;
+			case KeyEvent.VK_OPEN_BRACKET:
+				chave_esq.setBackground(corOriginalCHAVE_ESQ);	
+				break;
+			case KeyEvent.VK_CAPS_LOCK:
+				caps.setBackground(corOriginalCAPS);
+				break;
+			case KeyEvent.VK_A:
+				a.setBackground(corOriginalA);
+				break;
+			case KeyEvent.VK_S:
+				s.setBackground(corOriginalS);
+				break;
+			case KeyEvent.VK_D:
+				d.setBackground(corOriginalD);
+				break;
+			case KeyEvent.VK_F:
+				f.setBackground(corOriginalF);
+				break;
+			case KeyEvent.VK_G:
+				g.setBackground(corOriginalG);
+				break;
+			case KeyEvent.VK_H:
+				h.setBackground(corOriginalH);
+				break;
+			case KeyEvent.VK_J:
+				j.setBackground(corOriginalJ);
+				break;
+			case KeyEvent.VK_K:
+				k.setBackground(corOriginalK);
+				break;
+				
+			case KeyEvent.VK_L:
+				l.setBackground(corOriginalL);
+				break;
+			case KeyEvent.VK_DEAD_TILDE:
+				til.setBackground(corOriginalTIL);
+				break;
+			case KeyEvent.VK_CLOSE_BRACKET:
+				chave_dir.setBackground(corOriginalCHAVE_DIR);
+				break;
+			case KeyEvent.VK_ENTER:
+				enter.setBackground(corOriginalENTER);
+				break;
+			case KeyEvent.VK_SHIFT:
+				shift.setBackground(corOriginalSHIFT);
+				break;
+			case KeyEvent.VK_Z:
+				z.setBackground(corOriginalZ);
+				break;
+			case KeyEvent.VK_X:
+				x.setBackground(corOriginalX);
+				break;
+			case KeyEvent.VK_C:
+				c.setBackground(corOriginalC);
+				break;
+			case KeyEvent.VK_V:
+				v.setBackground(corOriginalV);
+				break;
+			case KeyEvent.VK_B:
+				b.setBackground(corOriginalB);
+				break;
+			case KeyEvent.VK_N:
+				n.setBackground(corOriginalN);
+				break;
+			case KeyEvent.VK_M:
+				m.setBackground(corOriginalM);
+				break;
+			case KeyEvent.VK_COMMA:
+				virgula.setBackground(corOriginalVIRGULA);
+				break;
+			case KeyEvent.VK_PERIOD:
+				ponto.setBackground(corOriginalPONTO);
+				break;
+			case KeyEvent.VK_SEMICOLON:
+				ponto_virgula.setBackground(corOriginalPONTO_VIRGULA);
+				break;
+			case KeyEvent.VK_SPACE:
+				space.setBackground(corOriginalSPACE);
+				break;
+			case KeyEvent.VK_UP:
+				cima.setBackground(corOriginalCIMA);
+				break;
+			case KeyEvent.VK_RIGHT:
+				direita.setBackground(corOriginalDIREITA);
+				break;
+			case KeyEvent.VK_LEFT:
+				esquerda.setBackground(corOriginalESQUERDA);
+				break;
+			case KeyEvent.VK_DOWN:
+				baixo.setBackground(corOriginalBAIXO);
+				break;
+			default:
+				ç.setBackground(corOriginalÇ);
+				break;
+				
+	}
 		// tratamento de excessão para o tamanho da string
 		
 		try {
@@ -552,9 +839,9 @@ public class Teclas extends KeyAdapter {
 				
 				acerto = Integer.toString(acerto_atual);
 				erro = Integer.toString(erro_atual);
-				textoFinal = new JLabel("Pressionamento de teclas   Corretas: " + acerto + "   Incorretas " + erro);
+				textoFinal = new JLabel("> Pressionamento de teclas >>   Corretas: " + acerto + "   Incorretas: " + erro);
 				ct.add(textoFinal);
-				textoFinal.setBounds(10,120, 600, 30);
+				textoFinal.setBounds(10,150, 700, 30);
 				caixa1.setText(null);
 				caixa1.setEditable(false);
 					
