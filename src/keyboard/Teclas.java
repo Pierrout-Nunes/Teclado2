@@ -1,3 +1,10 @@
+
+// T136
+// ANA FLAVIA PIERROUT DA SILVA   MATRICULA: 2019200768
+// ISABELLE NUNES FERREIRA       MATRICULA: 2019200769
+// AV2 - PROGRAMAÇÃO ORIENTADA A OBJETOS
+
+
 package keyboard;
 
 import javax.swing.*;
@@ -7,32 +14,36 @@ import java.awt.event.KeyEvent;
 
 public class Teclas extends KeyAdapter {
 	
-	private JFrame Principal = new JFrame("~*~* Teclado Virtual *~*~");  // "Titulo" na parte superior do teclado
-	private JLabel label = new JLabel ("Digite textos usando o seu teclado. A teclas que você selecionar serão sinalizadas e o texto será exibido.");
-	private JLabel label2 = new JLabel ("Obs: Não ocorrerá nenhuma ação caso clique nas teclas utilizando o mouse.");  // Textos fixos
-	private JLabel label3 = new JLabel ("Este teclado virtual te ajudará a praticar a digitação sem olhar para o teclado fisico.");
-	private JLabel label4 = new JLabel ("Digite os pangramas na caixa de texto abaixo, após dar um clique na mesma, visualizando ao final um relatório sobre seu desempenho!");
-	private JLabel label5 = new JLabel ("> Lembre-se de clicar a tecla ENTER ao fim de cada frase! <");
+	// Cria componentes
 	
-	//private JTextArea pangrama1 = new JTextArea("Zebras caolhas de Java querem mandar fax para moça gigante de New York");
-	private JTextArea caixa1 = new JTextArea();  // Caixa de texto
+	private JFrame Principal = new JFrame("~*~* Teclado Virtual *~*~");
+	private JLabel label = new JLabel ("Digite o texto usando o seu teclado. A teclas que você selecionar serão sinalizadas.");
+	private JLabel label2 = new JLabel ("Obs: Não ocorrerá nenhuma ação caso clique nas teclas utilizando o mouse.");
+	private JLabel label3 = new JLabel ("Este teclado virtual te ajudará a praticar a digitação sem olhar para o teclado fisico.");
+	private JLabel label4 = new JLabel ("Digite o pangrama na caixa de texto abaixo, após dar um clique na mesma, visualizando ao final um relatório sobre seu desempenho!");
+	private JLabel label5 = new JLabel ("> Lembre-se de clicar a tecla ENTER ao fim da frase! <");
+	
+	// Caixa de texto
+	
+	private JTextArea caixa1 = new JTextArea();
 	private JTextField texto = new JTextField();
 	
-	String pangrama = "abc";
+	String pangrama = "Gazeta publica hoje breve nota de faxina na quermesse";
 	int tamanho = pangrama.length();
-	
-	String pangrama2 = "abcde";
-	int tamanho2 = pangrama2.length();
-	
+	String acerto;
+	String erro;
 	int contador = 0;
-	
 	int atual = 0;
 	int erro_atual = 0;
 	int acerto_atual = 0;
+	private JLabel textoFinal;
 	
 	private JTextField pang = new JTextField(pangrama);
 	
-	private JButton aspas = new JButton("'");   // Botoes com nomes e conteúdos
+	
+	// Declaração de botões
+	
+	private JButton aspas = new JButton("'");
 	private JButton um = new JButton("1");
 	private JButton dois = new JButton("2");
 	private JButton tres = new JButton("3");
@@ -97,7 +108,9 @@ public class Teclas extends KeyAdapter {
 	
 	public Teclas(){
 		
-		Principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Configurações do painel
+		// Configurações do painel
+		
+		Principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Principal.setSize(new Dimension(820,670));
 		Principal.setResizable(false);
 		Principal.setVisible(true);
@@ -105,23 +118,27 @@ public class Teclas extends KeyAdapter {
 		Container ct = Principal.getContentPane();
 		ct.setLayout(null);  // Com o layout null é possível posicionar os componentes onde desejar
 		
-		label.setBounds(10,2,700,30);       // tamanho e posição dos textos fixos
+		// tamanho e posição dos textos fixos
+		
+		label.setBounds(10,2,700,30);  
 		label2.setBounds(10, 16, 500, 30);
 		label3.setBounds(10, 36, 500, 30);
 		label4.setBounds(10, 48, 800, 30);
 		label5.setBounds(10, 70, 500, 30);
-	//	pangrama1.setBounds(10,110, 500, 20);
 		
 		pang.setBounds(10, 110, 500, 20);
 		
+		// tamanho e posição da caixa de texto
 		
-		caixa1.setBounds(10, 150, 750, 170);  // tamanho e posição da caixa de texto
+		caixa1.setBounds(10, 190, 750, 120);
 		caixa1.setVisible(true);
 		caixa1.setLineWrap(true);
 	    caixa1.setWrapStyleWord(true);
-	    texto.setBounds(10,150,750,170);
+	    texto.setBounds(10,190,750,120);
+	    
+	   // tamanhos e posições dos botões
 
-		aspas.setBounds(10, 350, 50, 50);  // tamanhos e posições dos botões
+		aspas.setBounds(10, 350, 50, 50);
 		um.setBounds(62, 350, 50, 50);
 		dois.setBounds(114, 350, 50, 50);
 		tres.setBounds(166, 350, 50, 50);
@@ -185,12 +202,12 @@ public class Teclas extends KeyAdapter {
 		
 		
 		// adicionando a caixa de texto, textos fixos e botões ao teclado
+		
 		ct.add(label);
 		ct.add(label2);
 		ct.add(label3);
 		ct.add(label4);
 		ct.add(label5);
-	//	ct.add(pangrama1);
 		
 		ct.add(pang);
 		
@@ -259,8 +276,14 @@ public class Teclas extends KeyAdapter {
 		ct.add(baixo);
 		ct.add(direita);
 		
-	caixa1.addKeyListener(new KeyAdapter() {
+		
+		// ouvir eventos do teclado
+		final Color corOriginalaspas = aspas.getBackground();
+		caixa1.addKeyListener(new KeyAdapter() {
 		@Override
+		
+		// ação de clicar o botão e sinalizar as teclas
+		
 		public void keyPressed(KeyEvent evt) {
 			int keyCode = evt.getKeyCode();
 			
@@ -268,6 +291,7 @@ public class Teclas extends KeyAdapter {
 				case KeyEvent.VK_QUOTE:
 						caixa1.append(texto.getText());
 						aspas.doClick();
+						aspas.setBackground(Color.red);
 						break;
 				case KeyEvent.VK_1:
 						caixa1.append(texto.getText());
@@ -414,7 +438,6 @@ public class Teclas extends KeyAdapter {
 						caixa1.append(texto.getText());
 						l.doClick();
 						break;
-				
 				case KeyEvent.VK_DEAD_TILDE:
 						caixa1.append(texto.getText());
 						til.doClick();
@@ -476,103 +499,83 @@ public class Teclas extends KeyAdapter {
 						space.doClick();
 						break;
 				case KeyEvent.VK_UP:
-					caixa1.append(texto.getText());
-					cima.doClick();
-					break;
+						caixa1.append(texto.getText());
+						cima.doClick();
+						break;
 				case KeyEvent.VK_RIGHT:
-					caixa1.append(texto.getText());
-					direita.doClick();
-					break;
+						caixa1.append(texto.getText());
+						direita.doClick();
+						break;
 				case KeyEvent.VK_LEFT:
-					caixa1.append(texto.getText());
-					esquerda.doClick();
-					break;
+						caixa1.append(texto.getText());
+						esquerda.doClick();
+						break;
 				case KeyEvent.VK_DOWN:
-					caixa1.append(texto.getText());
-					baixo.doClick();
-					break;
+						caixa1.append(texto.getText());
+						baixo.doClick();
+						break;
 				default:
-					caixa1.append(texto.getText());
-					ç.doClick();
-					break;
+						caixa1.append(texto.getText());
+						ç.doClick();
+						break;
 			}
 						
 		}
 		
 	@Override
+	
+	// quando deixa de pressionar o botão
+	
 	public void keyReleased (KeyEvent evt) {
 		int keyCode = evt.getKeyCode();
 		
+		if (keyCode == KeyEvent.VK_QUOTE) {
+			aspas.setBackground(corOriginalaspas);
+			}
+		
+		// tratamento de excessão para o tamanho da string
+		
 		try {
-			contador = 0;
-			if ((caixa1.getText().length() <= tamanho) (contador = 0)) { 
+			if (caixa1.getText().length() <= tamanho) {    // As letras serão capturadas enquanto a caixa que está digitando for menor ou igual o comprimento do pangrama
 				
-				if(caixa1.getText().charAt(atual) == pang.getText().charAt(atual)){
-					atual++;
-					System.out.println("acertou");
+				if(caixa1.getText().charAt(atual) == pang.getText().charAt(atual) && (evt.getKeyCode()!=8)){
 					acerto_atual++;
-					System.out.println("você acertou "+ acerto_atual);
 				}
 				else
 					if(caixa1.getText().charAt(atual) != pang.getText().charAt(atual)) {
 						erro_atual++;
-						System.out.println("errou "+ erro_atual);
 					}
+				atual++;
+				}
+
+			else {   // quando o usuário termina de digitar o pangrama
 				
-			}
-			else
-			if(caixa1.getText().length() > tamanho) {
-				pang.setText("appp");
+				acerto = Integer.toString(acerto_atual);
+				erro = Integer.toString(erro_atual);
+				textoFinal = new JLabel("Pressionamento de teclas   Corretas: " + acerto + "   Incorretas " + erro);
+				ct.add(textoFinal);
+				textoFinal.setBounds(10,120, 600, 30);
 				caixa1.setText(null);
-				atual = 0;
-				erro_atual = 0;
-				acerto_atual = 0;
-				System.out.println(" "+pang.getText());
+				caixa1.setEditable(false);
+					
 			}
-				else {
-					pang.setText("abcde");
-					caixa1.setText(null);
-					atual = 0;
-					erro_atual = 0;
-					acerto_atual = 0;
-					System.out.println(" "+pang.getText());
-				}
-				}
-	//			else {
-		//			tamanho = 1;
-			//		if (caixa1.getText().length() <= tamanho) {
-		//			pang.setText("sr");
-				//	caixa1.setText(null);
-			//		atual = 0;
-		//			erro_atual = 0;
-		//			acerto_atual = 0;
-		//			System.out.println(" "+pang.getText());
-		//			}
-		//			}
-				
-			
+		}
 			
 		
-		catch (Exception um)
-		{		
-			if(evt.getKeyCode()==8) {
+		catch (Exception um){	
+			if(evt.getKeyCode()==8) {     // caso a tecla seja BackSpace irá decrementar
 				atual--;
-				System.out.println("letra deletada");
+				acerto_atual--;
+				erro_atual--;
 			}
-			else 
+			else {
 				if (caixa1.getText().length() > tamanho) {
-			System.out.println("Estourou o tamanho da string");
-			System.out.println(" exceção "+atual);
+						System.out.println("Estourou o tamanho da string");
 				}
+			}
 		}
 		
-		if(pang.getText().equals(caixa1.getText())) {
-			System.out.println("tudo certo");
-		}
-		
-	}
-		
-		
+	}	
 	
 	});
 		
